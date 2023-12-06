@@ -1,12 +1,20 @@
 public class Inscricao {
-
+	private static int idAtual = 0;
+	private String nomeParticipante;
+	private String nomeOrganizador;
     private int id;
-    private Participantes participante;
-    private Organizador organizador;
     private double valor;
 
-    // Construtores, getters e setters
 
+    // Construtores
+	public Inscricao(String nomeParticipante, String nomeOrganizador, double valor) {
+		this.id = idAtual++;
+		this.nomeParticipante = nomeParticipante;
+		this.nomeOrganizador = nomeOrganizador;
+		this.valor = valor;
+	}
+	
+	//getters e setters
 	int getId() {
 		return id;
 	}
@@ -15,20 +23,20 @@ public class Inscricao {
 		this.id = id;
 	}
 
-	Participantes getParticipante() {
-		return participante;
+	String getNomeParticipante() {
+		return nomeParticipante;
 	}
 
-	void setParticipante(Participantes participante) {
-		this.participante = participante;
+	void setNomeParticipante(String nomeParticipante) {
+		this.nomeParticipante = nomeParticipante;
 	}
 
-	Organizador getOrganizador() {
-		return organizador;
+	String getNomeOrganizador() {
+		return nomeOrganizador;
 	}
 
-	void setOrganizador(Organizador organizador) {
-		this.organizador = organizador;
+	void setNomeOrganizador(String nomeOrganizador) {
+		this.nomeOrganizador = nomeOrganizador;
 	}
 
 	double getValor() {
@@ -41,8 +49,8 @@ public class Inscricao {
 
 	public void exibirInformacoes() {
         System.out.println("ID da Inscrição: " + id);
-        System.out.println("Participante: " + participante.getNome());
-        System.out.println("Organizador: " + organizador.getNome());
+        System.out.println("Participante: " + nomeParticipante);
+        System.out.println("Organizador: " + nomeOrganizador);
         System.out.println("Valor: " + valor);
     }
 }

@@ -151,10 +151,14 @@ public class Main {
     }
 
     private static Inscricao criarInscricao(Scanner scanner) {
-        Inscricao inscricao = new Inscricao();
+        System.out.print("Nome do Participante: ");
+        String nomeParticipante = (scanner.next());
+        System.out.print("Nome do Organizador: ");
+        String nomeOrganizador = (scanner.next());
         System.out.print("Valor da Inscricao: ");
-        inscricao.setValor(scanner.nextDouble());
-        return inscricao;
+        double valor = (scanner.nextDouble());
+        Inscricao inscricao = new Inscricao(nomeParticipante, nomeOrganizador, valor);
+        return inscricao;   
     }
 
     // Método para exibir informações de uma lista de objetos
@@ -212,19 +216,21 @@ public class Main {
     private static void atualizarElemento(Eventos evento, Scanner scanner) {
         System.out.print("Novo Nome do Evento: ");
         evento.setNome(scanner.next());
-        System.out.print("Nova Data do Evento: ");
-        evento.setData(scanner.next());
         System.out.print("Nova Data e Hora do Evento: ");
         evento.setDataHora(scanner.next());
-        System.out.print("Nova Localização do Evento: ");
+        System.out.print("Nova Localizacaoo do Evento: ");
         evento.setLocalizacao(scanner.next());
-        System.out.println("Informações do Evento atualizadas com sucesso!");
+        System.out.println("Informacoes do Evento atualizadas com sucesso!");
     }
 
     private static void atualizarElemento(Inscricao inscricao, Scanner scanner) {
+        System.out.print("Novo Nome do Participante: ");
+        inscricao.setNomeParticipante(scanner.next());
+        System.out.print("Novo Nome do Organizador: ");
+        inscricao.setNomeOrganizador(scanner.next());
         System.out.print("Novo Valor da Inscrição: ");
         inscricao.setValor(scanner.nextDouble());
-        System.out.println("Informações da Inscrição atualizadas com sucesso!");
+        System.out.println("Informações da Inscricao atualizadas com sucesso!");
     }
 
     // Método para excluir um elemento de uma lista

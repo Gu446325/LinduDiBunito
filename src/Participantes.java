@@ -1,5 +1,5 @@
 public class Participantes {
-
+	private static int idAtual = 0;
     private int id;
     private String nome;
     private int idade;
@@ -7,6 +7,7 @@ public class Participantes {
     // Construtores
 
 	public Participantes(String nome, int idade) {
+		this.id = idAtual++;
 		this.nome = nome;
 		this.idade = idade;
 	}

@@ -1,11 +1,12 @@
 public class Organizador {
-
+	private static int idAtual = 0;
     private int id;
     private String nome;
     private int idade;
 	
 	//contrutor
 	public Organizador(String nome, int idade) {
+		this.id = idAtual++;
 		this.nome = nome;
 		this.idade = idade;
 	}
