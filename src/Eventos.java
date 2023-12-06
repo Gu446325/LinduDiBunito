@@ -1,6 +1,6 @@
 public class Eventos {
 
-    private int idEvento;
+    private int idEvento = 0;
     private String nome;
     private String data;
     private Organizador organizador;
@@ -8,9 +8,17 @@ public class Eventos {
     private String dataHora;
     private String localizacao;
 
-    // Construtores, getters e setters
+    // Construtores
+	public Eventos(String nome, String data,String dataHora, String localizacao, int limiteParticipante) {
+		this.nome = nome;
+		this.data = data;
+		this.dataHora = dataHora;
+		this.localizacao = localizacao;
+		this.limiteParticipante = limiteParticipante;
+	}
 
-	int getIdEvento() {
+	// getters e setters
+	Integer getIdEvento() {
 		return idEvento;
 	}
 
@@ -67,12 +75,27 @@ public class Eventos {
 	}
 
 	public void exibirInformacoes() {
-        System.out.println("ID do Evento: " + idEvento);
-        System.out.println("Nome: " + nome);
-        System.out.println("Data: " + data);
-        System.out.println("Organizador: " + organizador.getNome());
-        System.out.println("Limite de Participantes: " + limiteParticipante);
-        System.out.println("Data e Hora: " + dataHora);
-        System.out.println("Localização: " + localizacao);
+		if (getIdEvento() != 0){
+			System.out.println("ID do Evento: " + getIdEvento());
+		}
+		if (getNome() != null){
+			System.out.println("Nome do Evento: " + getNome());
+		}
+		if (getData() != null){
+			System.out.println("Data do Evento: " + getData());
+		}
+		if (getOrganizador() != null){
+			System.out.println("Organizador do Evento: " + getOrganizador().getNome());
+		}
+		if (getLimiteParticipante() != 0){
+			System.out.println("Limite de Participantes do Evento: " + getLimiteParticipante());
+		}
+		if (getDataHora() != null){
+			System.out.println("Data e Hora do Evento: " + getDataHora());
+		}
+		if (getLocalizacao() != null){
+			System.out.println("Localizacao do Evento: " + getLocalizacao());
+		}
+
     }
 }

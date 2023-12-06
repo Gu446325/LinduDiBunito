@@ -4,8 +4,14 @@ public class Participantes {
     private String nome;
     private int idade;
 
-    // Construtores, getters e setters
+    // Construtores
 
+	public Participantes(String nome, int idade) {
+		this.nome = nome;
+		this.idade = idade;
+	}
+
+	// Getters e Setters
 	int getId() {
 		return id;
 	}

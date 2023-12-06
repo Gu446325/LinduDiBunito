@@ -3,8 +3,14 @@ public class Organizador {
     private int id;
     private String nome;
     private int idade;
+	
+	//contrutor
+	public Organizador(String nome, int idade) {
+		this.nome = nome;
+		this.idade = idade;
+	}
 
-    // Construtores, getters e setters
+	//getters e setter
 
 	int getId() {
 		return id;
